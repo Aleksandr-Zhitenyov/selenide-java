@@ -24,6 +24,14 @@ dependencies {
             "org.slf4j:slf4j-simple:2.0.9",
             // Assertj
             'org.assertj:assertj-core:3.27.7',
+            // Pdf 1.5.0 5 -> vulnerabilities found in dependency
+            'com.codeborne:pdf-test:2.1.0',
+            // Xls 1.4.3
+            'com.codeborne:xls-test:1.7.2',
+            // Opencsv
+            'com.opencsv:opencsv:5.12.0',
+            // Jackson
+            'com.fasterxml.jackson.core:jackson-databind:2.21.0'
     )
 }
 
