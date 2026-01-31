@@ -21,7 +21,9 @@ dependencies {
             // Selenide
             "com.codeborne:selenide:7.13.0",
             // Logger
-            "org.slf4j:slf4j-simple:2.0.9"
+            "org.slf4j:slf4j-simple:2.0.9",
+            // Assertj
+            'org.assertj:assertj-core:3.27.7',
     )
 }
 
