@@ -12,6 +12,9 @@ compileTestJava {
 
 
 dependencies {
+    // Owner
+    implementation "org.aeonbits.owner:owner:1.0.12"
+
     testImplementation(
             // Junit
             "org.junit.jupiter:junit-jupiter:5.8.1",
