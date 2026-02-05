@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
+
 public class RegistrationFormTest extends TestBase {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
@@ -25,6 +28,9 @@ public class RegistrationFormTest extends TestBase {
         registrationFormPage.setSubject("Maths");
         registrationFormPage.setHobbies("Sports");
         registrationFormPage.setCurrentAddress("Moscow city");
+        registrationFormPage.uploadPicture("example/header_jmeter.jpg");
+        registrationFormPage.selectState("NCR");
+        registrationFormPage.selectCity("Gurgaon");
         registrationFormPage.submitForm();
 
         registrationFormPage.resultsModal()
@@ -35,6 +41,8 @@ public class RegistrationFormTest extends TestBase {
                 .verify("Date of Birth", "5 March,2015")
                 .verify("Subjects", "Maths")
                 .verify("Hobbies", "Sports")
+                .verify("Picture", "header_jmeter.jpg")
+                .verify("State and City", "NCR Gurgaon")
                 .verify("Address", "Moscow city");
     }
 }

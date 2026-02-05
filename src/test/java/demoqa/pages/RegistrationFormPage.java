@@ -22,6 +22,9 @@ public class RegistrationFormPage {
             subjectInput = $("input#subjectsInput"),
             hobbiesCheckBox = $("#hobbiesWrapper"),
             currentAddressInput = $("#currentAddress"),
+            uploadPictureInput = $("#uploadPicture"),
+            stateInput = $("#state"),
+            cityInput = $("#city"),
             submitButton = $("#submit");
 
     public void openPage() {
@@ -67,6 +70,20 @@ public class RegistrationFormPage {
 
     public void setCurrentAddress(String val) {
         currentAddressInput.setValue(val);
+    }
+
+    public void uploadPicture(String val) {
+        uploadPictureInput.uploadFromClasspath(val);
+    }
+
+    public void selectState(String val) {
+        stateInput.click();
+        $(byText(val)).click();
+    }
+
+    public void selectCity(String val) {
+        cityInput.click();
+        $(byText(val)).click();
     }
 
     public void submitForm() {
