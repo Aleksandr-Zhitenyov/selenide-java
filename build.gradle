@@ -24,6 +24,8 @@ dependencies {
             "org.slf4j:slf4j-simple:2.0.9",
             // Assertj
             'org.assertj:assertj-core:3.27.7',
+            // Faker
+            'net.datafaker:datafaker:2.5.3',
             // Pdf 1.5.0 5 -> vulnerabilities found in dependency
             'com.codeborne:pdf-test:2.1.0',
             // Xls 1.4.3
