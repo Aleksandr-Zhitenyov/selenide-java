@@ -2,6 +2,8 @@ package demoqa.tests.bookstore;
 
 import demoqa.pages.RegisterPage;
 import demoqa.tests.TestBase;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -11,6 +13,7 @@ public class RegisterTest extends TestBase {
     RegisterPage registerPage = new RegisterPage();
 
     @DisplayName("Registration on demoqa.com")
+    @Severity(SeverityLevel.BLOCKER)
     @Tags({@Tag("UI_TEST"), @Tag("BLOCKER"), @Tag("HIGH")})
     @Test
     void successfulRegister() {

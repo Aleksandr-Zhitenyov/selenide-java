@@ -2,6 +2,8 @@ package demoqa.tests.forms;
 
 import demoqa.pages.RegistrationFormPage;
 import demoqa.tests.TestBase;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import net.datafaker.Faker;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -38,7 +40,8 @@ public class RegistrationFormTest extends TestBase {
     String currentAddress = faker.address().fullAddress();
 
     @DisplayName("Successful submit registration form on demoqa/forms")
-    @Tags({@Tag("UI_TEST"), @Tag("CRITICAL")})
+    @Severity(SeverityLevel.CRITICAL)
+    @Tags({@Tag("UI_TEST")})
     @Test
     void successfulRegistrationTest() {
         step("Open registration form page", () -> {

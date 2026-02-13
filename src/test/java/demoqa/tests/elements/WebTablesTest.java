@@ -2,6 +2,8 @@ package demoqa.tests.elements;
 
 import demoqa.pages.WebTablesPage;
 import demoqa.tests.TestBase;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -16,6 +18,7 @@ public class WebTablesTest extends TestBase {
             "Jane,Smith,jane@example.com,30,6000,HR"
     })
     @DisplayName("Successful add new record and search in table by first name on demoqa/tables")
+    @Severity(SeverityLevel.MINOR)
     @Tags({@Tag("UI_TEST"), @Tag("LOW")})
     @ParameterizedTest(name = "Should record and search by firstName: {0}")
     void successfulAddNewRecordAndSearchInTable(String firstName,
