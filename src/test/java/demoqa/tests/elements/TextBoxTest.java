@@ -15,7 +15,7 @@ public class TextBoxTest extends TestBase {
 
     @DisplayName("Successful submit form on demoqa/text-box")
     @Severity(SeverityLevel.MINOR)
-    @Tags({@Tag("UI_TEST")})
+    @Tag("UI_TEST")
     @Test
     void shouldSubmitForm() {
         open("/text-box");

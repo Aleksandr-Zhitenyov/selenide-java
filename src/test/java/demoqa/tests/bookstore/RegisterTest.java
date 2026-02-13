@@ -14,7 +14,7 @@ public class RegisterTest extends TestBase {
 
     @DisplayName("Registration on demoqa.com")
     @Severity(SeverityLevel.BLOCKER)
-    @Tags({@Tag("UI_TEST"), @Tag("BLOCKER"), @Tag("HIGH")})
+    @Tags({@Tag("UI_TEST"), @Tag("HIGH")})
     @Test
     void successfulRegister() {
         registerPage.openPage()

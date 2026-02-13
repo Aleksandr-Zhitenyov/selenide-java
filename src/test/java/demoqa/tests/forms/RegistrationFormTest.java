@@ -41,7 +41,7 @@ public class RegistrationFormTest extends TestBase {
 
     @DisplayName("Successful submit registration form on demoqa/forms")
     @Severity(SeverityLevel.CRITICAL)
-    @Tags({@Tag("UI_TEST")})
+    @Tag("UI_TEST")
     @Test
     void successfulRegistrationTest() {
         step("Open registration form page", () -> {
