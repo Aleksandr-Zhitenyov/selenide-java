@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
+import static io.qameta.allure.Allure.step;
+
 public class LoginTest extends TestBase {
     LoginPage loginPage = new LoginPage();
 
@@ -14,10 +16,14 @@ public class LoginTest extends TestBase {
     @Tags({@Tag("UI_TEST"), @Tag("BLOCKER"), @Tag("HIGH")})
     @Test
     void successfulLogin() {
-        loginPage.openPage();
-
-        loginPage.login();
-
-        loginPage.verifyOpenProfilePage();
+        step("Open login page", () -> {
+            loginPage.openPage();
+        });
+        step("Fill in the field with access data", () -> {
+            loginPage.login();
+        });
+        step("Verify open profile page", () -> {
+            loginPage.verifyOpenProfilePage();
+        });
     }
 }

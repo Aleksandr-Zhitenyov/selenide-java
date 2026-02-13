@@ -23,7 +23,7 @@ public class WebTablesTest extends TestBase {
                                 String email,
                                 int age,
                                 int salary,
-                                String department) {
+                                   String department) {
         webTablesPage.openPage()
                 .addNewRecord()
                 .setRecordModal(firstName,lastName, email, age, salary, department)

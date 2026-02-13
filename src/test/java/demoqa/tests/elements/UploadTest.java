@@ -9,6 +9,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static io.qameta.allure.Allure.step;
 
 public class UploadTest extends TestBase {
 
@@ -16,11 +17,17 @@ public class UploadTest extends TestBase {
     @Tag("UPLOAD")
     @Test
     void shouldSuccessfulUploadFile() {
-        open("/upload-download");
-        $("h1").shouldHave(text("Upload and Download"));
-        $("input[type='file']")
-                .shouldBe(visible)
-                .uploadFromClasspath("example/header_jmeter.jpg");
-        $("#uploadedFilePath").shouldHave(text("header_jmeter.jpg"));
+        step("Open page", () -> {
+            open("/upload-download");
+        });
+        step("Upload file", () -> {
+            $("h1").shouldHave(text("Upload and Download"));
+            $("input[type='file']")
+                    .shouldBe(visible)
+                    .uploadFromClasspath("example/header_jmeter.jpg");
+        });
+        step("Verify result", () -> {
+            $("#uploadedFilePath").shouldHave(text("header_jmeter.jpg"));
+        });
     }
 }
