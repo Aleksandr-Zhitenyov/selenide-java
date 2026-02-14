@@ -6,6 +6,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
+    static final WebSteps webSteps = new WebSteps();
 
     @BeforeAll
     static void beforeAll() {
@@ -13,5 +14,7 @@ public class TestBase {
         Configuration.browserSize = "1500x900";
 
         SelenideLogger.addListener("allure", new AllureSelenide());
+
+        webSteps.openDemoqaMainPage();
     }
 }
