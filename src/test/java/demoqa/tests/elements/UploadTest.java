@@ -32,6 +32,8 @@ public class UploadTest extends TestBase {
                     .uploadFromClasspath("example/header_jmeter.jpg");
             attachment("Source", webdriver().driver().source());
             webSteps.takeScreenshot();
+            webSteps.attachPageSource();
+            webSteps.attachPageSourceString();
         });
         step("Verify result", () -> {
             $("#uploadedFilePath").shouldHave(text("header_jmeter.jpg"));
