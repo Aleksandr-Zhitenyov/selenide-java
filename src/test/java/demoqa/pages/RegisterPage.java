@@ -29,6 +29,16 @@ public class RegisterPage {
         return this;
     }
 
+    public RegisterPage checkCaptcha() {
+        switchTo().frame($("iframe[title='reCAPTCHA']"));
+        $("#recaptcha-anchor")
+                .shouldBe(visible).click();
+        $("#recaptcha-anchor")
+                .shouldHave(attribute("aria-checked", "true"), Duration.ofSeconds(5));
+        switchTo().defaultContent();
+        return this;
+    }
+
     public RegisterPage setFirstname(String val) {
         firstnameInput.setValue(val);
         return this;
@@ -46,16 +56,6 @@ public class RegisterPage {
 
     public RegisterPage setPassword(String val) {
         passwordInput.setValue(val);
-        return this;
-    }
-
-    public RegisterPage checkCaptcha() {
-        switchTo().frame($("iframe[title='reCAPTCHA']"));
-        $("#recaptcha-anchor")
-                .shouldBe(visible).click();
-        $("#recaptcha-anchor")
-                .shouldHave(attribute("aria-checked", "true"), Duration.ofSeconds(5));
-        switchTo().defaultContent();
         return this;
     }
 

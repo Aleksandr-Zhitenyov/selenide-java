@@ -35,6 +35,16 @@ public class RegistrationFormPage {
         executeJavaScript("$('#RightSide_Advertisement').closest('[class*=col]').remove()");
     }
 
+    public RegistrationFormPage resultsModal() {
+        resultsModalElement.verifyModalAppears();
+        return this;
+    }
+
+    public RegistrationFormPage verify(String key, String val) {
+        resultsModalElement.verifyKV(key, val);
+        return this;
+    }
+
     public void setFirstName(String val) {
         firstNameInput.setValue(val);
     }
@@ -88,15 +98,5 @@ public class RegistrationFormPage {
 
     public void submitForm() {
         submitButton.click();
-    }
-
-    public RegistrationFormPage resultsModal() {
-        resultsModalElement.verifyModalAppears();
-        return this;
-    }
-
-    public RegistrationFormPage verify(String key, String val) {
-        resultsModalElement.verifyKV(key, val);
-        return this;
     }
 }
