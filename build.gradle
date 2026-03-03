@@ -7,11 +7,11 @@ allure {
     report {
         version.set("2.36.0")
     }
-    adapter {
-        aspectjWeaver.set(true)
+    adapter { // отвечает за появление директории build/allure-results
+        aspectjWeaver.set(true) // обработка аннотации @Step
         frameworks {
-            junit5 {
-                adapterVersion.set("2.29.1")
+            junit5 { // название фреймворка
+                adapterVersion.set("2.29.1") // версия интеграции фреймворка и Allure
             }
         }
     }
@@ -55,4 +55,10 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+tasks.register('example_test', Test) {
+    useJUnitPlatform {
+        includeTags("example")
+    }
 }

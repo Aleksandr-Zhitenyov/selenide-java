@@ -15,7 +15,7 @@ import java.util.List;
 
 import static io.qameta.allure.Allure.step;
 
-
+@Tag("example")
 public class RegistrationFormTest extends TestBase {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
     Faker faker = new Faker();
