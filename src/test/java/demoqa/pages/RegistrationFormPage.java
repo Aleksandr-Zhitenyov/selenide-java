@@ -30,9 +30,9 @@ public class RegistrationFormPage {
     public void openPage() {
         open("/automation-practice-form");
         $("h1").shouldHave(text(TITLE_TEXT));
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
-        executeJavaScript("$('#RightSide_Advertisement').closest('[class*=col]').remove()");
+        executeJavaScript("document.getElementById('fixedban')?.remove();");
+        executeJavaScript("document.querySelector('footer')?.remove();");
+        executeJavaScript("document.querySelector('#RightSide_Advertisement')?.closest('[class*=col]')?.remove();");
     }
 
     public RegistrationFormPage resultsModal() {
